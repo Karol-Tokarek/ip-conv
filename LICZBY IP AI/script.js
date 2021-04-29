@@ -4,6 +4,7 @@ console.log("WORKINNNNNNG");
 var inpt = document.querySelector("#in");
 var outp = document.querySelector("#msgs")
 var out2 = document.querySelector("#out2");
+var out3 = document.querySelector("#out3");
 
 
 inpt.addEventListener("focusout", function(){
@@ -73,7 +74,7 @@ let dec2bin = (ip, x=0) => {
 
 
 
-let bin2dec = (ip) => {
+let bin2dec = (ip, x=0) => {
 
 let dec = "";
 for(i=0; i<ip.length; i++)
@@ -83,7 +84,11 @@ for(i=0; i<ip.length; i++)
 	dec+= parseInt(ip[i], 2);
 
 }
+
+	if(x == 0)
 	outp.textContent = dec;
+	if(x == 1)
+	out3.textContent = dec;
 
 
 }
@@ -97,35 +102,41 @@ var inpt4 = document.querySelector(".in4");
 
 var inpts = document.querySelectorAll("#in2");
 
+var inptsy3 = document.querySelectorAll("#in3");
 
 
-//tutaj wersja z keyup - trzeba zmienic maxlength w HTML na = "3" w pierwszym inpucie
+//tutaj wersja z keyup - I Z BIN TO DEC
 
-// for(let i=0; i<inpts.length; i++){
+for(let i=0; i<inptsy3.length; i++){
 
-// inpts[i].addEventListener("keyup", function(){
-
-
-// 	if(inpts[i].value.length >= 3)
-// 	{
-// 		if (inpts[i+1] !== undefined)
-// 		inpts[i+1].focus();
-// 	}
+ inptsy3[i].addEventListener("keyup", function(){
 
 
+ 	if(inptsy3[i].value.length >= 8)
+	{
+		if (inptsy3[i+1] !== undefined)
+ 		inptsy3[i+1].focus();
+
+ 	}
+});
+}
+
+var tabel = [];
 
 
-//  //  	inpt1value = inpt1.value;
-//  //  	tab = inpt1value.split(".");
-//  //  	inpt1.value = "";
-//  //  	inpt1.value = tab[0];
-//  //  	inpt2.value = tab[1];
-// 	// inpt3.value = tab[2];
-// 	// inpt4.value = tab[3];
-
-//     //console.log(paste);
 
 
+ inptsy3[3].addEventListener("focusout", function(){
+ 	
+for(let i=0; i<inptsy3.length; i++){
+	tabel[i] = inptsy3[i].value;
+
+
+}
+	bin2dec(tabel, 1);
+
+
+ });
 
 
 
@@ -136,7 +147,7 @@ var inpts = document.querySelectorAll("#in2");
 var tab2 = [];
 
 
-////kod odpowiedzialny za wklejenie naszego IP do 4 inputow. i zamiana z dziesietnego na binarny
+////kod odpowiedzialny za wklejenie naszego IP do 4 inputow. i na koncu zamiana z dziesietnego na binarny
 
 
 for(let i=0; i<inpts.length; i++){
@@ -164,13 +175,3 @@ inpts[i].addEventListener("paste", function(){
 });
 
 }
-    // console.log("PASTED");
-    // inpt1value = inpt1.value;
-
-    // tab2 = inpt1value.split(".");
-    // console.log(tab2);
-    // //inpt1.value = "";
-    // inpt1.value = tab2[0];
-    // inpt2.value = tab2[1];
-    // inpt3.value = tab2[2];
-    // inpt4.value = tab2[3];
