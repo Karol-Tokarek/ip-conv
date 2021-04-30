@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<h1> Konwerter adresów </h1>
+<p>Prosty konwerter formatów adresów.</p>
+<input type="text" id = "in" /> >> <output id = "out"></output> 
+<output id="msgs"></output>
+<br/>
+<br/>
+
+<p> DEC -> BIN (konwersja TYLKO po wklejeniu) </p>
+
+<div class="inps">
+<input type="text" id = "in2" class="in1" maxlength="66" />.
+<input type="text" id = "in2" class="in2" maxlength="3"/>.
+<input type="text" id = "in2" class="in3" maxlength="3"/>.
+<input type="text" id = "in2" class="in4" maxlength="3"/>
+<br>
+
+</div>
+<br>
+<output id = "out2"></output>
+<br>
+
+<p> BIN -> DEC (konwersja po wpisaniu do 4 pól (automatyczne przenoszenie po przekroczeniu maxLength)) </p>
+
+<br>
+<div class="inpsy2">
+<input type="text" id = "in3" class="inn1" maxlength="8" />.
+<input type="text" id = "in3" class="inn2" maxlength="8"/>.
+<input type="text" id = "in3" class="inn3" maxlength="8"/>.
+<input type="text" id = "in3" class="inn4" maxlength="8"/>
+<br>
+
+</div>
+<br>
+<output id = "out3"></output>
+<br>
+<table>
+	<tr>
+		<td>ADRES IP</td> <td>Klasa adresowa</td> <td> Wynik </td>
+	</tr>
+	<tr>
+		<td class="ip1">192.168.0.100</td> <td><input type="text" class="q1"/></td> <td><output class="a1"></output></td>
+	</tr>
+	<tr>
+		<td class="ip1">10.1.0.10</td> <td><input type="text" class="q2"/></td> <td><output class="a1"></output></td>
+   </tr>
+   <tr>
+      <td class="ip1">172.16.32.64</td> <td><input type="text" class="q3"/></td> <td><output class="a1"></output></td>
+   </tr>
+   <tr>
+   		<td>Wynik</td> <td>Suma punktów</td> <td> <output class="outpsuma">0</output>/3</td>
+   	</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
